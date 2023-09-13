@@ -1,6 +1,7 @@
 # Space Survivors
 ---
 ## Game status: undeveloped and unplayable
+---
 ## Genres: [will be filled in the future]
 ---
 ## Code and build tools:
