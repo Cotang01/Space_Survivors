@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ny4emk11umk1"]
+
+[ext_resource type="Script" path="res://Scenes/levels/player.gd" id="1_hm1u8"]
+[ext_resource type="Texture2D" uid="uid://d06v1xcrmt4fu" path="res://graphic/player/Artichoke_player_sprite_.png" id="1_nhf8b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns7d5"]
+radius = 24.0
+height = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_hm1u8")
+
+[node name="MainChar" type="Sprite2D" parent="."]
+texture = ExtResource("1_nhf8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_ns7d5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
