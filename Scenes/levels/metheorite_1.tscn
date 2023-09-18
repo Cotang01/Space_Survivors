@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce3kbjpaw413s"]
-
-[ext_resource type="Texture2D" uid="uid://cagtqkcop2l71" path="res://graphic/obstacles/metheorite_1.png" id="1_l5wh4"]
-
-[node name="Metheorite_1" type="StaticBody2D"]
-
-[node name="Body" type="Sprite2D" parent="."]
-texture = ExtResource("1_l5wh4")

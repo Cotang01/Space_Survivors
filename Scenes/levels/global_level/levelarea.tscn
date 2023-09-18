@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://fpl31akuop5q"]
+
+[ext_resource type="Script" path="res://Scenes/levels/global_level/levelarea.gd" id="1_3lf1q"]
+[ext_resource type="Texture2D" uid="uid://dfofwwo2uy77f" path="res://graphic/levels/Space Background.png" id="1_uyqni"]
+[ext_resource type="PackedScene" uid="uid://ny4emk11umk1" path="res://Scenes/player/prototype/playerimage.tscn" id="2_bawaj"]
+[ext_resource type="PackedScene" uid="uid://ce3kbjpaw413s" path="res://Scenes/obstacles/metheorite_01/metheorite_1.tscn" id="3_66fm1"]
+
+[node name="LevelArea" type="Node2D"]
+script = ExtResource("1_3lf1q")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_uyqni")
+
+[node name="Metheorite_1" parent="." instance=ExtResource("3_66fm1")]
+position = Vector2(472, 154)
+
+[node name="Metheorite_2" parent="." instance=ExtResource("3_66fm1")]
+position = Vector2(369, 103)
+
+[node name="Metheorite_3" parent="." instance=ExtResource("3_66fm1")]
+position = Vector2(796, 165)
+
+[node name="Metheorite_4" parent="." instance=ExtResource("3_66fm1")]
+position = Vector2(281, 135)
+
+[node name="Metheorite_5" parent="." instance=ExtResource("3_66fm1")]
+position = Vector2(567, 111)
+
+[node name="Player" parent="." instance=ExtResource("2_bawaj")]
+position = Vector2(560, 296)
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[connection signal="player_met_metheorite" from="Metheorite_1" to="." method="_on_metheorite_1_player_met_metheorite"]
+[connection signal="player_met_metheorite" from="Metheorite_2" to="." method="_on_metheorite_1_player_met_metheorite"]
+[connection signal="player_met_metheorite" from="Metheorite_3" to="." method="_on_metheorite_1_player_met_metheorite"]
+[connection signal="player_met_metheorite" from="Metheorite_4" to="." method="_on_metheorite_1_player_met_metheorite"]
+[connection signal="player_met_metheorite" from="Metheorite_5" to="." method="_on_metheorite_1_player_met_metheorite"]
+[connection signal="shoot_bullet" from="Player" to="." method="_on_player_shoot_bullet"]

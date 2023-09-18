@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ny4emk11umk1"]
+
+[ext_resource type="Script" path="res://Scenes/player/prototype/player.gd" id="1_hm1u8"]
+[ext_resource type="Texture2D" uid="uid://d06v1xcrmt4fu" path="res://graphic/player/Artichoke_player_sprite_.png" id="1_nhf8b"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_hm1u8")
+
+[node name="MainChar" type="Sprite2D" parent="."]
+texture = ExtResource("1_nhf8b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -13, 0, -15, 9, -13, 17, -11, 12, -20, 18, -25, 25, -7, 22, 4, 7, 3, 3, 17, -3, 17, -10, 3, -22, 4, -25, -8, -18, -25, -12, -20, -17, -10)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="BulletStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="BulletStartPositions"]
+position = Vector2(-18, -24)
+
+[node name="Marker2D2" type="Marker2D" parent="BulletStartPositions"]
+position = Vector2(18, -24)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

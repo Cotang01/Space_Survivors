@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs77wuidvyhns"]
+
+[ext_resource type="Texture2D" uid="uid://d18ru5vnah5uq" path="res://graphic/player/bullet_sprites/player_bullet_1.png" id="1_pyddn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsaqd"]
+radius = 5.0
+height = 10.0
+
+[node name="Bullet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pyddn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xsaqd")
